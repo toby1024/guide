@@ -1,0 +1,30 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    database: 0
+    host: 192.168.1.166
+    port: 6379
+    timeout: 5000
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/guide_dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456aB!
+    driver-class-name: com.mysql.jdbc.Driver
+
+#不能用localhost,否则启动报异常:Unresolved address
+#tcp监听的端口
+tcp:
+  port: 8090
+# bossGroup的线程数
+boss:
+  thread:
+    count: 2
+# worker的线程数
+worker:
+  thread:
+    count: 2
+#是否使用长连接
+so:
+  keepalive:  true
+  backlog: 100
