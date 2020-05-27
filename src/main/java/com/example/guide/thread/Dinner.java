@@ -33,7 +33,7 @@ public class Dinner {
 
     }
 
-    if (countDownLatch.await(3, TimeUnit.SECONDS)) {
+    if (countDownLatch.await(10, TimeUnit.SECONDS)) {
       System.out.println("---喝酒吃肉");
     } else {
       System.out.println("---GG");

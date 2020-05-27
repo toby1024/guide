@@ -1,5 +1,7 @@
 package com.example.guide.thread;
 
+import lombok.SneakyThrows;
+
 /**
  * @program: guide
  * @description:
@@ -17,9 +19,11 @@ public class DinnerThread implements Runnable {
     this.message = name + "-->" +message;
   }
 
+  @SneakyThrows
   @Override
   public void run() {
     System.out.println(name + ": running....");
+    Thread.sleep(5000L);
     Dinner d = new Dinner();
     d.call(friend, message);
   }
