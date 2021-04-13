@@ -3,15 +3,26 @@ spring:
     allow-bean-definition-overriding: true
   redis:
     database: 0
-    host: 192.168.1.166
+    host: 127.0.0.1
     port: 6379
     timeout: 5000
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/guide_dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456aB!
+    password: 12345678
     driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
 
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
 #不能用localhost,否则启动报异常:Unresolved address
 #tcp监听的端口
 tcp:
